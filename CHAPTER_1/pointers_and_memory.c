@@ -18,5 +18,11 @@ int main(void) {
 
 	// Avoiding the conflict in different platforms
 	printf("The pointer is :%p", (void *)pi);
+
+	// How 0 can be interpretted different sometimes
+	int number = 0; // this is a zero
+	int *num_pointer = &number;
+	int *num_pointer = 0 // this is a zero
+	int *new_pointer = 0; // this is null and not 0
 	return (0);
 }
