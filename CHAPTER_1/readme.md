@@ -13,3 +13,11 @@ does not reference any location in memory
 	size_t size = sizeof(void); // not valid
 - If a pointer is declared as global or static, it is initialized to NULL when the program starts.
 - On most modern platforms, the size of a pointer to data is normally the same regardless of the pointer type. However, the size of a pointer to a function may be different from the size of a pointer to data.
+- The type size_t represents the maximum size any object can be in C
+- Be careful when printing values defined as size_t. These are unsigned values, and if
+you choose the wrong format specifier, you’ll get unreliable results. The recommended format specifier is %zu. However, this is not always available. As an alternative, consider using %u or %lu.
+- The types intptr_t and uintptr_t are used for storing pointer addresses.
+- When an array name is used by itself, it returns the address of an array,
+which is also the address of the first element of the array:
+- Accessing memory past the end of an array is a dangerous thing to do and should be avoided.
+- The type ptrdiff_t is a portable way to express the difference between two pointers.
